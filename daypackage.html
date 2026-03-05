@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Loving Homes - رعاية وإقامة الحيوانات الأليفة">
+    <meta name="theme-color" content="#0059BD">
+    <title>Loving Homes | حجز الحزمة اليومية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/iconweb2.png">
+    <style>
+        .package-badge {
+            background: linear-gradient(135deg, #20c997, #0ca678);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(32,201,151,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">نبذة عنا</a></li>
+                <li><a href="help.html">المساعدة والمشورة</a></li>
+                <li><a href="packages.html" class="active">الحزم المقدمة</a></li>
+                <li><a href="facilities.html">المرافق المقدمة</a></li>
+                <li><a href="home.html">الرئيسية</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="home.html"><img src="images/iconweb2.png" alt="Loving Homes Logo" title="Loving Homes Logo"></a>
+        </div>
+    </header>
+
+    <main class="booking-page-wrapper">
+        <div class="booking-flat-card">
+            <div class="package-badge">
+                <i class="fas fa-sun" style="margin-left: 8px;"></i>
+                الحزمة اليومية - الرعاية النهارية
+            </div>
+            <h2 class="form-title-day">نموذج حجز - الحزمة اليومية</h2>
+
+            <form action="#" class="booking-form" id="dayBookingForm">
+                <div class="form-group-title">
+                    <i class="fas fa-user" style="margin-left: 8px; color: var(--accent-orange);"></i>
+                    معلومات صاحب الحيوان
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-user-circle"></i> الاسم الكامل:</label>
+                    <input type="text" name="owner-name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-phone-alt"></i> رقم الهاتف:</label>
+                    <input type="tel" name="phone" required placeholder="+962 7X XXX XXXX">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-envelope"></i> البريد الإلكتروني:</label>
+                    <input type="email" name="email" required placeholder="example@domain.com">
+                </div>
+
+                <div class="form-group-title">
+                    <i class="fas fa-dog" style="margin-left: 8px; color: var(--accent-orange);"></i>
+                    معلومات الحيوان الأليف
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-tag"></i> اسم الحيوان:</label>
+                    <input type="text" name="pet-name" required placeholder="اسم كلبك">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-paw"></i> النوع:</label>
+                    <input type="text" name="type" required placeholder="مثال: هاسكي">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-calendar-alt"></i> العمر:</label>
+                    <input type="text" name="age" placeholder="مثال: سنتان">
+                </div>
+
+                <div class="form-group-title">
+                    <i class="fas fa-clock" style="margin-left: 8px; color: var(--accent-orange);"></i>
+                    تفاصيل الحجز
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-calendar-day"></i> تاريخ الحجز:</label>
+                    <input type="text" name="date" placeholder="يوم / شهر / سنة">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-hourglass-start"></i> وقت الوصول:</label>
+                    <input type="text" name="arrival-time" placeholder="مثال: 9:00 صباحاً">
+                </div>
+                <div class="input-row">
+                    <label><i class="fas fa-hourglass-end"></i> وقت الاستلام:</label>
+                    <input type="text" name="pickup-time" placeholder="مثال: 5:00 مساءً">
+                </div>
+
+                <div class="checkbox-options">
+                    <p>
+                        <span style="font-weight: bold; color: var(--main-blue);">❤️ هل يحتاج الحيوان إلى عناية خاصة؟</span>
+                        <label><input type="radio" name="special-care" value="yes"> <span style="margin-right: 5px;">نعم</span></label>
+                        <label><input type="radio" name="special-care" value="no" checked> <span style="margin-right: 5px;">لا</span></label>
+                    </p>
+                </div>
+
+                <div class="input-row">
+                    <label><i class="fas fa-pen"></i> إذا نعم، يرجى التوضيح:</label>
+                    <input type="text" name="care-details" placeholder="أي احتياجات خاصة">
+                </div>
+
+                <div class="terms-check">
+                    <label>
+                        <input type="checkbox" id="terms" required>
+                        <span style="margin-right: 8px;">أوافق على الشروط والأحكام</span>
+                    </label>
+                </div>
+
+                <button type="submit" id="bookingBtn" class="booking-btn" disabled>
+                    <i class="fas fa-check-circle" style="margin-left: 8px;"></i>
+                    احجز الآن
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <button type="button" onclick="openSettings()" class="settings-floating-btn">
+     الإعدادات⚙️
+</button>
+
+<!-- نافذة الإعدادات المنبثقة -->
+<div id="settingsModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2 class="modal-title">⚙️ إعدادات الموقع</h2>
+        
+        
+        
+        <div class="setting-item">
+                <label id="fontSizeLabel">حجم الخط: 18px</label>
+                <input type="range" id="fontSizeSlider" min="14" max="32" value="18" class="font-slider" oninput="changeFontSize(this.value)">
+                <div class="slider-labels">
+                    <span>صغير</span>
+                    <span>كبير جداً</span>
+                </div>
+            </div>
+
+        <!-- زر الوضع الليلي المنسق -->
+        
+
+        <button type="button" onclick="closeSettings()" class="close-red-btn">إغلاق</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

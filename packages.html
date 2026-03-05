@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Loving Homes - رعاية وإقامة الحيوانات الأليفة">
+    <meta name="theme-color" content="#0059BD">
+    <title>Loving Homes | الحزم المقدمة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/iconweb2.png">
+    <style>
+        /* تنسيقات إضافية لصفحة الحزم */
+        .packages-section {
+            padding: 20px 0;
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 30px;
+            padding: 35px 25px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,89,189,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--main-blue), var(--accent-orange));
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-header h2 {
+            font-size: 2rem;
+            color: var(--main-blue);
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 2.8rem;
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+        
+        .features-list {
+            text-align: right;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+        
+        .features-list h3 {
+            color: var(--main-blue);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .features-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
+            padding-right: 25px;
+            position: relative;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .features-list li::before {
+            content: '🐾';
+            position: absolute;
+            right: -5px;
+            top: 0;
+            font-size: 1rem;
+        }
+        
+        .features-list li strong {
+            color: var(--accent-orange);
+        }
+        
+        .btn-orange {
+            background: linear-gradient(135deg, var(--accent-orange), #ff6b00);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-orange:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,140,0,0.3);
+        }
+        
+        .btn-orange i {
+            font-size: 1.2rem;
+        }
+        
+        body.night-mode .package-card {
+            background: #1a1a2e;
+            border-color: #2d2d44;
+        }
+        
+        body.night-mode .tagline {
+            background: #2d2d44;
+            color: #e0e0e0;
+        }
+        
+        body.night-mode .description,
+        body.night-mode .features-list li {
+            color: #e0e0e0;
+        }
+        
+        body.night-mode .price span {
+            color: #aaa;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 30px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        body.night-mode .intro-text {
+            background: #2d2d44;
+            color: #e0e0e0;
+        }
+        
+        .booking-cta {
+            margin: 60px 0 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--main-blue), #004494);
+            border-radius: 50px;
+            color: white;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .booking-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .booking-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">نبذة عنا</a></li>
+                <li><a href="help.html">المساعدة والمشورة</a></li>
+                <li><a href="packages.html" class="active">الحزم المقدمة</a></li>
+                <li><a href="facilities.html">المرافق المقدمة</a></li>
+                <li><a href="home.html">الرئيسية</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="home.html"><img src="images/iconweb2.png" alt="Loving Homes Logo" title="Loving Homes Logo"></a>
+        </div>
+    </header>
+
+    <main class="page-title">
+        <h1>
+            <i class="fas fa-gift" style="margin-left: 10px; color: var(--accent-orange);"></i>
+            الحزم المقدمة
+        </h1>
+        
+        <div class="intro-text">
+            <i class="fas fa-quote-right" style="color: var(--accent-orange); font-size: 2rem; display: block; margin-bottom: 15px;"></i>
+            في Loving Homes، نقدم عدة خيارات من الحزم لتلبية احتياجات كلابكم المختلفة، سواء كانت إقامة قصيرة أو طويلة، مع مراعاة مستوى النشاط والراحة. كل حزمة تم تصميمها بعناية لتضمن راحة الحيوان، نشاطه البدني، وتحقيق الترفيه اليومي.
+        </div>
+
+        <section class="packages-section">
+            <div class="packages-container">
+
+                <!-- الحزمة اليوم -->
+                <div class="package-card">
+                    <div class="card-header">
+                        <h2>الحزمة اليوم</h2>
+                        <div class="price">$25 <span>/ يوم</span></div>
+                        <div class="tagline">☀️ رعاية متكاملة ليوم واحد فقط</div>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="description">هذه الحزمة مصممة خصيصاً للإقامات القصيرة أو للكلاب التي تحتاج إلى نشاط محدود خلال النهار فقط. مثالية لأصحاب الكلاب المنشغلين خلال ساعات العمل الطويلة أو للمسافرين ليوم واحد.</p>
+
+                        <div class="features-list">
+                            <h3>ماذا تشمل؟</h3>
+                            <ul>
+                                <li><strong>🚶 جلسات المشي:</strong> مرتين يومياً (صباحية ومسائية)</li>
+                                <li><strong>🛝 منطقة لعب خارجية:</strong> ساحة آمنة ومسيجة بالكامل</li>
+                                <li><strong>🏃 مسار الرشاقة:</strong> جلسة واحدة يومياً</li>
+                                <li><strong>🧩 جلسة شم واستكشاف:</strong> لتحفيز الذكاء</li>
+                                <li><strong>🍖 وجبة غداء:</strong> متكاملة ومعتمدة بيطرياً</li>
+                                <li><strong>😴 قيلولة بعد الظهر:</strong> في منطقة مظللة</li>
+                                <li><strong>📱 تحديث نهاية اليوم:</strong> رسالة نصية للمالك</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="daypackage.html" style="text-decoration: none;">
+                        <button class="btn-orange">
+                            <i class="fas fa-calendar-check"></i>
+                            احجز الآن
+                        </button>
+                    </a>
+                </div>
+
+                <!-- الحزمة الكلاسيكية -->
+                <div class="package-card">
+                    <div class="card-header">
+                        <h2>الحزمة الكلاسيكية</h2>
+                        <div class="price">$45 <span>/ يوم</span></div>
+                        <div class="tagline">⚖️ باقة متوازنة تناسب معظم الكلاب</div>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="description">الحزمة الكلاسيكية توفر توازناً مثالياً بين الراحة والنشاط، وهي مناسبة لمعظم الحيوانات الأليفة التي تحتاج إلى رعاية متوسطة ومتابعة يومية منظمة دون المبالغة في الرفاهية.</p>
+
+                        <div class="features-list">
+                            <h3>ماذا تشمل؟</h3>
+                            <ul>
+                                <li><strong>🚶 جلسات المشي:</strong> ثلاث جلسات يومياً</li>
+                                <li><strong>🎯 الأنشطة اليومية:</strong> ثلاثة أنشطة متنوعة</li>
+                                <li><strong>🎪 حظيرة لعب داخلية:</strong> مجهزة بألعاب آمنة</li>
+                                <li><strong>🛋️ منطقة استرخاء:</strong> بأسرّة مبطنة</li>
+                                <li><strong>✂️ جلسة حلاقة وتنظيف:</strong> أسبوعياً</li>
+                                <li><strong>🥕 وجبات خفيفة صحية:</strong> قطع تفاح أو جزر</li>
+                                <li><strong>📱 تحديث يومي سريع:</strong> رسالة نصية</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="classicpackage.html" style="text-decoration: none;">
+                        <button class="btn-orange">
+                            <i class="fas fa-calendar-check"></i>
+                            احجز الآن
+                        </button>
+                    </a>
+                </div>
+
+                <!-- الحزمة المميزة -->
+                <div class="package-card">
+                    <div class="card-header">
+                        <h2>الحزمة المميزة</h2>
+                        <div class="price">$65 <span>/ يوم</span></div>
+                        <div class="tagline">⭐ باقة الرفاهية الكاملة لكلبك</div>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="description">هذه الحزمة مصممة لأصحاب الرغبة في تقديم أقصى مستوى من الرعاية لحيوانهم الأليف. توفر تجربة فندقية شاملة مع أنشطة متنوعة ومتابعة يومية على مدار الساعة.</p>
+
+                        <div class="features-list">
+                            <h3>ماذا تشمل؟</h3>
+                            <ul>
+                                <li><strong>🚶 جلسات المشي:</strong> أربع جلسات يومياً</li>
+                                <li><strong>🎯 الأنشطة اليومية:</strong> أربعة أنشطة متنوعة</li>
+                                <li><strong>🌿 مساحة عشب خاصة:</strong> للاستراحة واللعب الحر</li>
+                                <li><strong>📸 تحديثات يومية بالصور:</strong> عبر واتساب</li>
+                                <li><strong>🦴 مكافآت صحية خاصة:</strong> حسب الاتفاق</li>
+                                <li><strong>🛏️ غرفة نوم فاخرة:</strong> مكيفة ومريحة</li>
+                                <li><strong>📊 تقرير أسبوعي مفصل:</strong> للإقامات الطويلة</li>
+                                <li><strong>🎁 هدية تذكارية:</strong> عند انتهاء الإقامة</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="premiumpackage.html" style="text-decoration: none;">
+                        <button class="btn-orange">
+                            <i class="fas fa-calendar-check"></i>
+                            احجز الآن
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="booking-cta">
+            <div class="cta-container">
+                <h2>احجز الآن</h2>
+                <p>اختر الحزمة المناسبة لكلبك واضغط على زر الحجز، وسنقوم بالتواصل معك خلال 24 ساعة لتأكيد الحجز والإجابة عن أي استفسارات إضافية.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>تواصل معنا</h2>
+                <p>في Loving Homes نحرص على أن يكون التواصل معنا سهلًا وسريعًا. يمكنك الاستفسار عن الحزم، طلب حجز، أو ترتيب باقة مخصصة من خلال إحدى وسائل الاتصال التالية:</p>
+
+                <div class="footer-columns-wrapper">
+                    <div class="footer-column">
+                        <div class="contact-row">
+                            <span>البريد الإلكتروني: info@lovinghomes.com</span>
+                            <img src="images/email-icon.png" alt="Email">
+                        </div>
+                        <div class="contact-row">
+                            <span>رقم الهاتف: +962 7X XXX XXXX</span>
+                            <img src="images/phone-icon.png" alt="Phone">
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <div class="contact-row">
+                            <span>Instagram: @lovinghomes</span>
+                            <img src="images/instagram.png" alt="Instagram">
+                        </div>
+                        <div class="contact-row">
+                            <span>Facebook: Loving Homes</span>
+                            <img src="images/facebook.png" alt="Facebook">
+                        </div>
+                        <div class="contact-row">
+                            <span>WhatsApp: +962 7X XXX XXXX</span>
+                            <img src="images/whats.png" alt="WhatsApp">
+                        </div>
+                    </div>
+                </div>
+
+              
+            </div>
+
+            <div class="footer-logo">
+                <img src="images/iconweb2.png" alt="Loving Homes Logo">
+            </div>
+        </div>
+    </footer>
+
+   <button type="button" onclick="openSettings()" class="settings-floating-btn">
+     الإعدادات⚙️
+</button>
+
+<!-- نافذة الإعدادات المنبثقة -->
+<div id="settingsModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2 class="modal-title">⚙️ إعدادات الموقع</h2>
+        
+        
+        
+        <div class="setting-item">
+                <label id="fontSizeLabel">حجم الخط: 18px</label>
+                <input type="range" id="fontSizeSlider" min="14" max="32" value="18" class="font-slider" oninput="changeFontSize(this.value)">
+                <div class="slider-labels">
+                    <span>صغير</span>
+                    <span>كبير جداً</span>
+                </div>
+            </div>
+
+        <!-- زر الوضع الليلي المنسق -->
+        
+
+        <button type="button" onclick="closeSettings()" class="close-red-btn">إغلاق</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

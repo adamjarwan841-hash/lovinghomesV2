@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Loving Homes - رعاية وإقامة الحيوانات الأليفة">
+    <meta name="theme-color" content="#0059BD">
+    <title>Loving Homes | المرافق المقدمة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/iconweb2.png">
+    <style>
+        /* تنسيقات إضافية لصفحة المرافق */
+        .facility-item {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0,89,189,0.05);
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .facility-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--main-blue), #004494);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,89,189,0.3);
+        }
+        
+        .facility-item strong {
+            color: var(--main-blue);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .facility-list-item {
+            margin-bottom: 15px;
+            padding-right: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .facility-list-item::before {
+            content: '🐾';
+            position: absolute;
+            right: -5px;
+            top: 0;
+            font-size: 1rem;
+        }
+        
+        body.night-mode .facility-item {
+            background: #1a1a2e;
+            border-color: #2d2d44;
+        }
+        
+        .intro-text {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        body.night-mode .intro-text {
+            background: #2d2d44;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">نبذة عنا</a></li>
+                <li><a href="help.html">المساعدة والمشورة</a></li>
+                <li><a href="packages.html">الحزم المقدمة</a></li>
+                <li><a href="facilities.html" class="active">المرافق المقدمة</a></li>
+                <li><a href="home.html">الرئيسية</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="home.html"><img src="images/iconweb2.png" alt="Loving Homes Logo" title="Loving Homes Logo"></a>
+        </div>
+    </header>
+
+    <main class="page-title">
+        <h1>
+            <i class="fas fa-building" style="margin-left: 10px; color: var(--accent-orange);"></i>
+            المرافق المقدمة
+        </h1>
+        
+        <div class="intro-text">
+            <i class="fas fa-quote-right" style="color: var(--accent-orange); font-size: 2rem; display: block; margin-bottom: 15px;"></i>
+            مرحبًا بكم في صفحة المرافق المقدمة في Loving Homes، حيث نحرص على أن يحصل كل كلب على أفضل تجربة إقامة ممكنة تجمع بين الراحة، الأمان، والرعاية المتكاملة. تم تصميم هذه الصفحة لتوضيح كل ما نقدمه من خدمات ومرافق بطريقة منظمة وواضحة تساعد العملاء على فهم القيمة الحقيقية لكل باقة وإقامة.
+        </div>
+
+        <!-- المرفق 1 -->
+        <div class="facility-item">
+            <div class="facility-number">1</div>
+            <div class="facility-text">
+                <strong>🏠 الغرف المريحة والمجهزة بالكامل</strong>
+                <p>تحتوي كل غرفة في الفندق على تدفئة وتبريد تحت الأرضية لتوفير درجة حرارة مثالية مهما كانت الظروف الجوية، مع الحفاظ على راحة الحيوان الأليف طوال اليوم. كما تحتوي الغرف على تلفزيون لخلق بيئة مألوفة تقلل من القلق والتوتر لدى الكلاب أثناء الإقامة، مما يجعلهم يشعرون وكأنهم في منزلهم.</p>
+            </div>
+            <div class="facility-image">
+                <img src="images/rooms.png" alt="الغرف" title="الغرف">
+            </div>
+        </div>
+
+        <!-- المرفق 2 -->
+        <div class="facility-item">
+            <div class="facility-number">2</div>
+            <div class="facility-text">
+                <strong>🚐 خدمة التوصيل من وإلى المكان</strong>
+                <p>نوفر خدمة نقل آمنة وسلسة للحيوانات الأليفة، لتسهيل وصولها إلى الفندق والعودة مرة أخرى. يتم التعامل مع كل حيوان بعناية فائقة لضمان راحة وسلامة الحيوان طوال الرحلة، مع إجراءات احترافية للسلامة والأمان.</p>
+            </div>
+        </div>
+
+        <!-- المرفق 3 -->
+        <div class="facility-item">
+            <div class="facility-number">3</div>
+            <div class="facility-text">
+                <strong>🌳 المراعي والمساحات الخارجية</strong>
+                <div class="facility-list-item">مراعي خارجية آمنة تتيح للكلاب الجري واللعب بحرية في بيئة مراقبة بالكامل، مع مساحة كافية لتفريغ الطاقة والنشاط البدني.</div>
+                <div class="facility-list-item">مساحة عشب خاصة لكل حيوان لتوفير مكان هادئ للراحة والاسترخاء بعيدًا عن الضوضاء.</div>
+                <div class="facility-list-item">حظيرة اللعب الداخلية تضمن استمرار الترفيه حتى عند الظروف الجوية غير المناسبة، مع أنشطة ممتعة تبقي الكلاب نشطة ومتحمسة.</div>
+            </div>
+            <div class="facility-image">
+                <img src="images/garden.png" alt="المراعي" title="المراعي">
+            </div>
+        </div>
+
+        <!-- المرفق 4 -->
+        <div class="facility-item">
+            <div class="facility-number">4</div>
+            <div class="facility-text">
+                <strong>⚕️ الرعاية البيطرية والمراقبة المستمرة</strong>
+                <p>تتوفر خدمات بيطرية على مدار 24 ساعة لمتابعة صحة الحيوانات والتدخل الفوري عند الحاجة. كما يتم مراقبة جميع الحيوانات الأليفة باستمرار لضمان سلامتهم ونشاطهم، مما يمنح أصحابهم راحة البال التامة ويطمئنهم على حالة حيواناتهم.</p>
+            </div>
+        </div>
+
+        <!-- المرفق 5 -->
+        <div class="facility-item">
+            <div class="facility-number">5</div>
+            <div class="facility-text">
+                <strong>🎾 الأنشطة الترفيهية اليومية</strong>
+                <div class="facility-list-item">التمشية في الغابات تحت إشراف مختصين لتوفير نشاط بدني صحي وطبيعي.</div>
+                <div class="facility-list-item">أنشطة منظمة يوميًا مثل التمارين، مسارات الرشاقة، والحفر في الرمال، لتعزيز الحركة والنشاط الذهني والجسدي للكلاب.</div>
+                <div class="facility-list-item">هذه الأنشطة مصممة لتناسب كل مستويات النشاط، مع إمكانية تخصيصها حسب احتياجات كل كلب.</div>
+            </div>
+            <div class="facility-image">
+                <img src="images/activites.png" alt="الأنشطة" title="الأنشطة">
+            </div>
+        </div>
+
+        <!-- المرفق 6 -->
+        <div class="facility-item">
+            <div class="facility-number">6</div>
+            <div class="facility-text">
+                <strong>🎯 الهدف والفائدة من هذه المرافق</strong>
+                <p>تعمل كل هذه المرافق والخدمات معًا على خلق بيئة آمنة، صحية، وممتعة لكلبك، بحيث يشعر بالراحة والاهتمام الكامل طوال فترة إقامته. الصفحة تساعد العملاء على فهم جودة الخدمات والقيمة المضافة التي يحصل عليها الحيوان، مما يسهل عليهم اتخاذ قرار الحجز بثقة.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>تواصل معنا</h2>
+                <p>في Loving Homes نحرص على أن يكون التواصل معنا سهلًا وسريعًا. يمكنك الاستفسار عن الحزم، طلب حجز، أو ترتيب باقة مخصصة من خلال إحدى وسائل الاتصال التالية:</p>
+
+                <div class="footer-columns-wrapper">
+                    <div class="footer-column">
+                        <div class="contact-row">
+                            <span>البريد الإلكتروني: info@lovinghomes.com</span>
+                            <img src="images/email-icon.png" alt="Email">
+                        </div>
+                        <div class="contact-row">
+                            <span>رقم الهاتف: +962 7X XXX XXXX</span>
+                            <img src="images/phone-icon.png" alt="Phone">
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <div class="contact-row">
+                            <span>Instagram: @lovinghomes</span>
+                            <img src="images/instagram.png" alt="Instagram">
+                        </div>
+                        <div class="contact-row">
+                            <span>Facebook: Loving Homes</span>
+                            <img src="images/facebook.png" alt="Facebook">
+                        </div>
+                        <div class="contact-row">
+                            <span>WhatsApp: +962 7X XXX XXXX</span>
+                            <img src="images/whats.png" alt="WhatsApp">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-logo">
+                <img src="images/iconweb2.png" alt="Loving Homes Logo">
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" onclick="openSettings()" class="settings-floating-btn">
+     الإعدادات⚙️
+</button>
+
+<!-- نافذة الإعدادات المنبثقة -->
+<div id="settingsModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2 class="modal-title">⚙️ إعدادات الموقع</h2>
+        
+        
+        
+        <div class="setting-item">
+                <label id="fontSizeLabel">حجم الخط: 18px</label>
+                <input type="range" id="fontSizeSlider" min="14" max="32" value="18" class="font-slider" oninput="changeFontSize(this.value)">
+                <div class="slider-labels">
+                    <span>صغير</span>
+                    <span>كبير جداً</span>
+                </div>
+            </div>
+
+        <!-- زر الوضع الليلي المنسق -->
+        
+
+        <button type="button" onclick="closeSettings()" class="close-red-btn">إغلاق</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
